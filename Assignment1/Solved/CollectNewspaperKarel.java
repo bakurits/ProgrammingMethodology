@@ -12,6 +12,7 @@ import stanford.karel.*;
 
 public class CollectNewspaperKarel extends SuperKarel {
 
+	/* this method moves Karel to Newspaper */
 	private void goForNeswpaper() {
 		while (frontIsClear()) {
 			move();
@@ -21,23 +22,25 @@ public class CollectNewspaperKarel extends SuperKarel {
 		turnLeft();
 		move();
 	}
-	
+
+	/* in this method Karel picks newspaper and turns around */
 	private void pickAndTurn() {
 		pickBeeper();
 		turnAround();
 	}
-	
+
+	/* this method moves Karel Back to the begin */
 	private void backToBegin() {
 		move();
 		turnRight();
 		move();
 		turnLeft();
-		while (frontIsClear()) { 
+		while (frontIsClear()) {
 			move();
 		}
 		turnAround();
 	}
-	
+
 	public void run() {
 		goForNeswpaper();
 		pickAndTurn();
