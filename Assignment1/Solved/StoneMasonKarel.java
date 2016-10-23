@@ -52,6 +52,8 @@ public class StoneMasonKarel extends SuperKarel {
 			moveIfItsPossible();
 			moveIfItsPossible();
 		}
+		turnLeft();
+		fixCurrentMason();
 	}
 	
 	public void run() {
