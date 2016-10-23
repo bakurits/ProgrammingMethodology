@@ -20,16 +20,20 @@ public class CheckerboardKarel extends SuperKarel {
 	/* this method checks if it's necessary to put beeper on it */
 	private void checkLastCell() {
 		turnAround();
-		moveIfItsPossible();
-		if (!beepersPresent()) {
-			turnAround();
+		if (frontIsClear()) {
 			moveIfItsPossible();
 			if (!beepersPresent()) {
-				putBeeper();
+				turnAround();
+				moveIfItsPossible();
+				if (!beepersPresent()) {
+					putBeeper();
+				}
+			} else {
+				turnAround();
+				moveIfItsPossible();
 			}
 		} else {
 			turnAround();
-			moveIfItsPossible();
 		}
 
 	}
